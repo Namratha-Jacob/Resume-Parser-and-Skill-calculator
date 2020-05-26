@@ -12,7 +12,7 @@ import spacy
 import csv
 import re
 
-data = ResumeParser('Safia.pdf').get_extracted_data()
+data = ResumeParser('SampleResume.pdf').get_extracted_data()
 # data contains a dictionary
 
 name = data['name']
@@ -41,11 +41,6 @@ skill[-1] = c
 for i in range(len(skill)):
 	skill[i] = skill[i].lower()
 
-'''
-#removing starting whitespace
-for i in range(len(skill)):
-	skill[i] = skill[i].strip()
-'''
 	
 	
 f = open("requirement.txt","r")
@@ -57,12 +52,10 @@ for i in range(len(text)):
 
 score = 0
 for s in text:
-	print("Entered for")
 	if s in skill:
-		print("entered if")
 		score = score + 1
 
 print("Name: ",name)
 print("score: ",score)
-print("requirements: ",text)
-print("skills: ",skill)
+print("\nRequirements: ",text)
+print("\nSkills: ",skill)
