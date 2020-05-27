@@ -35,11 +35,15 @@ for i in range(len(a)-1):
 	c+=a[i]
 skill[-1] = c
 
-
+skill_list = []
+skill_req = []
 
 # converting all to lower case
 for i in range(len(skill)):
 	skill[i] = skill[i].lower()
+
+for i in skill:
+	skill_list.append(i.strip())
 
 	
 	
@@ -49,13 +53,15 @@ text = text.split(",")
 
 for i in range(len(text)):
 	text[i] = text[i].lower()
+for i in text:
+	skill_req.append(i.strip())
 
 score = 0
-for s in text:
-	if s in skill:
+for s in skill_list:
+	if s in skill_req:
 		score = score + 1
 
 print("Name: ",name)
 print("score: ",score)
-print("\nRequirements: ",text)
-print("\nSkills: ",skill)
+print("\nRequirements: ",skill_req)
+print("\nSkills: ",skill_list)
